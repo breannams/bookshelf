@@ -1,9 +1,10 @@
 class Book{
-    constrctor(id, title, author, pages){
+    constructor({id, title, author, pages, genre_id}){
         this.id = id
         this.title = title
         this.author = author
         this.pages = pages
+        this.genre_id = genre_id
     }
 
 
@@ -14,7 +15,8 @@ class Book{
         bookDiv.innerHTML +=
         `
         <ul>
-        <h3>${this.title}</h3>
+        <h3>${this.title} by ${this.author}</h3>
+            <li>number of pages: ${this.pages}</li>
         </ul>
         <button class = "delete-bttn", data-id = ${this.id} onclick ="deleteBook()">Delete Book </button>
         `

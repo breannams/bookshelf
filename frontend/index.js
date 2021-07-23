@@ -14,10 +14,10 @@ function fetchBooks(){
     fetch(`${base_url}/books`)
     .then(resp => resp.json())
     .then(books =>{
-      //  console.log(books)
+    
            for (const book of books){
-            let b = new Book(book.id, book.title, book.author, book.pages)
-              //  console.log(b)
+            let b = new Book(book)
+              
                 b.renderBooks();
            }
         })
