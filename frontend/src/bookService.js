@@ -12,7 +12,10 @@ class BookService{
         fetch(`${this.endpoint}/books`)
         .then(resp => resp.json())
         .then(books => {
-            
+            for (const book of books){
+                let b = new Book(book)
+                b.renderBooks();
+            }
         })
     }
     //create method

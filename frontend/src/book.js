@@ -1,4 +1,5 @@
 class Book{
+    
     constructor({id, title, author, pages, genre_id}){
         this.id = id
         this.title = title
@@ -10,7 +11,7 @@ class Book{
 
     //instance method to render obj to DOM
 
-    renderBooks(books){
+    renderBooks(){
         let bookDiv = document.getElementById("books-container")
         bookDiv.innerHTML +=
         `
