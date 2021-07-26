@@ -20,8 +20,9 @@ class Book{
         <h3>${this.title} by ${this.author}</h3>
             <li>number of pages: ${this.pages}</li>
         </ul>
-        <button class = "delete-bttn", data-id = ${this.id} onclick ="deleteBook()">Delete Book </button>
+        <button class = "delete-bttn", data-id = ${this.id} onclick ="bookService.deleteBook()">Delete Book </button>
         `
     }
+
 
  }

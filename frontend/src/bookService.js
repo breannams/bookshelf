@@ -67,4 +67,12 @@ class BookService{
 
     //delete
 
+    deleteBook(){
+            let bookId = parseInt(event.target.dataset.id)
+            fetch(`${base_url}/books/${bookId}`,{
+                method: "DELETE"
+            })
+       
+    }
+
 }
