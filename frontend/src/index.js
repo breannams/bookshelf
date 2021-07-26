@@ -106,7 +106,12 @@
 ///trying it out with the Service files again:
 
 const base_url = "http://127.0.0.1:3000"
-const bookService = new BookService(base_url)
-const bookClass = new Book(base_url)
+
 bookService.fetchBooks()
-bookClass.newBookForm()
+bookService.newBookForm()
+
+function handleSubmit(){
+    event.preventDefault();
+    bookService.bookFormSubmit();
+    event.target.reset()
+}
