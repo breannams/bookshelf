@@ -1,5 +1,5 @@
 class Book{
-    
+
     constructor({id, title, author, pages, genre_id}){
         this.id = id
         this.title = title
@@ -22,5 +22,7 @@ class Book{
         <button class = "delete-bttn", data-id = ${this.id} onclick ="deleteBook()">Delete Book </button>
         `
     }
+
+   
 
  }
