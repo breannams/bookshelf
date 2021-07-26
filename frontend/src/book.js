@@ -6,6 +6,7 @@ class Book{
         this.author = author
         this.pages = pages
         this.genre_id = genre_id
+        
     }
 
 
@@ -23,6 +24,20 @@ class Book{
         `
     }
 
-   
+    newBookForm(){ 
+        let bookForm = document.getElementById("form-container")
+        bookForm.innerHTML +=
+        `
+        <form>
+        <h3>Enter In a New Book!</h3>
+            Title:<input type= "text" id= "title"><br>
+            Author:<input type = "text" id= "author"><br>
+            Number of Pages:<input type = "text" id = "pages"><br>
+            
+        <input type = "submit" value = "Create!">
+        </form>
+        `
+        bookForm.addEventListener("submit", bookService.bookFormSubmit)
+    }
 
  }
