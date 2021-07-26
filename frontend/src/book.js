@@ -10,7 +10,7 @@ class Book{
 
     //instance method to render obj to DOM
 
-    renderBooks(){
+    renderBooks(books){
         let bookDiv = document.getElementById("books-container")
         bookDiv.innerHTML +=
         `
