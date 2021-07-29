@@ -74,16 +74,5 @@ class BookService{
        
     }
 
-        //editing
-    editBookForm(){
-        let bookTitle = document.getElementById("book-title").textContent
-        let bookAuthor = document.getElementById("book-author").textContent
-        let bookPages = document.getElementById("book-pages").textContent
-        
-        title.value = bookTitle
-        author.value = bookAuthor
-        pages.value = bookPages
-      ///add in something for the genre field at a later time
-    }
     
 }
