@@ -32,7 +32,7 @@ class BookService{
         <input type = "submit" value = "Create!">
         </form>
         `
-        bookForm.addEventListener("submit", handleSubmit)
+        bookForm.addEventListener("submit", handleBookSubmit)
     }
 
     bookFormSubmit(){
@@ -56,7 +56,6 @@ class BookService{
              fetch(`${this.endpoint}/books`,configObj)
              .then(resp => resp.json())
              .then( book =>{
-               
                 let b = new Book(book)
                 b.renderBooks()
                
@@ -69,10 +68,22 @@ class BookService{
 
     deleteBook(){
             let bookId = parseInt(event.target.dataset.id)
-            fetch(`${base_url}/books/${bookId}`,{
+            fetch(`${this.endpoint}/books/${bookId}`,{
                 method: "DELETE"
             })
        
     }
 
+        //editing
+    editBookForm(){
+        let bookTitle = document.getElementById("book-title").textContent
+        let bookAuthor = document.getElementById("book-author").textContent
+        let bookPages = document.getElementById("book-pages").textContent
+        
+        title.value = bookTitle
+        author.value = bookAuthor
+        pages.value = bookPages
+      ///add in something for the genre field at a later time
+    }
+    
 }

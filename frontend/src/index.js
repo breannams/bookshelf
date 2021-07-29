@@ -111,7 +111,7 @@ const bookService = new BookService(base_url)
 bookService.fetchBooks()
 bookService.newBookForm()
 
-function handleSubmit(){
+function handleBookSubmit(event){
     event.preventDefault();
     bookService.bookFormSubmit();
     event.target.reset()

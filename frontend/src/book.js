@@ -16,11 +16,14 @@ class Book{
         let bookDiv = document.getElementById("books-container")
         bookDiv.innerHTML +=
         `
+       
         <ul>
-        <h3>${this.title} by ${this.author}</h3>
-            <li>number of pages: ${this.pages}</li>
+        <h2 id = "book-title">${this.title}</h2> <h3 id = "book-author"> Written by ${this.author} </h3>
+            <li id = "book-pages">number of pages: ${this.pages}</li>
         </ul>
-        <button class = "delete-bttn", data-id = ${this.id} onclick ="bookService.deleteBook()">Delete Book </button>
+        <button class = "delete-bttn", data-id = ${this.id} onclick ="bookService.deleteBook()"> Delete Book </button>
+        <button class = "edit-bttn", data-id = ${this.id} onclick = "bookService.editBookForm()">Edit Book </button>
+        
         `
     }
 
