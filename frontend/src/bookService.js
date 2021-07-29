@@ -25,14 +25,14 @@ class BookService{
         `
         <form>
         <h3>Enter In a New Book!</h3>
-            Title:<input type= "text" id= "title"><br>
-            Author:<input type = "text" id= "author"><br>
-            Number of Pages:<input type = "text" id = "pages"><br>
-            Genre_id: <input type = "text" id = "genre_id"> <br>
+            <label> Title:<input type= "text" id= "title"></label><br>
+            <label>Author:<input type = "text" id= "author"></label><br>
+            <label>Number of Pages:<input type = "text" id = "pages"></label><br>
+            <label>Genre_id: <input type = "text" id = "genre_id"></label><br>
         <input type = "submit" value = "Create!">
         </form>
         `
-        bookForm.addEventListener("submit", handleBookSubmit)
+        bookForm.addEventListener("submit", bookService.handleBookSubmit)
     }
 
      handleBookSubmit(event){
@@ -40,7 +40,7 @@ class BookService{
         bookService.bookFormSubmit();
         event.target.reset()
     }
-    
+
     bookFormSubmit(){
           
             const book = {
