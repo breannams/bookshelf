@@ -1,15 +1,11 @@
 //for all of book's fetches :)
 
 class BookService{
-    constructor(endpoint){
-        this.endpoint = endpoint
-    }
-
-
+  
     //read method
 
     fetchBooks(){
-        fetch(`${this.endpoint}/books`)
+        fetch(`${base_url}/books`)
         .then(resp => resp.json())
         .then(books => {
             for (const book of books){
@@ -59,7 +55,7 @@ class BookService{
                 body: JSON.stringify(book)
             }
         
-             fetch(`${this.endpoint}/books`,configObj)
+             fetch(`${base_url}/books`,configObj)
              .then(resp => resp.json())
              .then( book =>{
                 let b = new Book(book)
@@ -74,7 +70,7 @@ class BookService{
 
     deleteBook(){
             let bookId = parseInt(event.target.dataset.id)
-            fetch(`${this.endpoint}/books/${bookId}`,{
+            fetch(`${base_url}/books/${bookId}`,{
                 method: "DELETE"
             })
        

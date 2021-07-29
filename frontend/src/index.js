@@ -24,7 +24,7 @@
 ///trying it out with the Service files again:
 
 const base_url = "http://127.0.0.1:3000"
-const bookService = new BookService(base_url)
+const bookService = new BookService
 const addNewBookBttn = document.getElementById("add-new-book")
 
 addNewBookBttn.addEventListener("click", bookService.newBookForm)
