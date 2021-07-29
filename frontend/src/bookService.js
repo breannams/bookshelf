@@ -35,6 +35,12 @@ class BookService{
         bookForm.addEventListener("submit", handleBookSubmit)
     }
 
+     handleBookSubmit(event){
+        event.preventDefault();
+        bookService.bookFormSubmit();
+        event.target.reset()
+    }
+    
     bookFormSubmit(){
           
             const book = {
