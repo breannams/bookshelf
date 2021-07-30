@@ -24,7 +24,22 @@ class BookService{
             <label> Title:<input type= "text" id= "title"></label><br>
             <label>Author:<input type = "text" id= "author"></label><br>
             <label>Number of Pages:<input type = "text" id = "pages"></label><br>
-            <label>Genre_id: <input type = "text" id = "genre_id"></label><br>
+
+            <label>Select a Genre: </label>
+            <select id = "book-genre" name = "genre">
+            <option value="1">Horror</option>
+            <option value = "2">Fantasy</option>
+            <option value = "3">Sci-Fi</option>
+            <option value = "4">Suspense</option>
+            <option value = "5">Religion</option>
+            <option value = "6">Action</option>
+            <option value = "7">Classics</option>
+            <option value = "9">Comic Books</option>
+            
+            </select>
+            <br>
+
+
         <input type = "submit" value = "Create!">
         </form>
         `
@@ -38,12 +53,18 @@ class BookService{
     }
 
     bookFormSubmit(){
-          
+          const {title, author, pages, genre} = event.target
+            // const book = {
+            //     title: document.getElementById("title").value,
+            //     author: document.getElementById("author").value,
+            //     pages: document.getElementById("pages").value,
+            //     genre_id: document.getElementById("genre_id").value
+            // }
             const book = {
-                title: document.getElementById("title").value,
-                author: document.getElementById("author").value,
-                pages: document.getElementById("pages").value,
-                genre_id: document.getElementById("genre_id").value
+                title: title.value,
+                author: author.value,
+                pages: pages.value,
+                genre_id: genre.value
             }
            
             const configObj ={
@@ -62,7 +83,7 @@ class BookService{
                 b.renderBooks()
                
              })
-          
+          debugger
         }
         
 

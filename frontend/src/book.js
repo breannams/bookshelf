@@ -5,7 +5,7 @@ class Book{
         this.title = title
         this.author = author
         this.pages = pages
-        this.genre_id = genre_id
+        this.genre = genre_id.name
         
     }
 
@@ -21,11 +21,13 @@ class Book{
         <div id = specific-book>
         <h2 id = "book-title">${this.title}</h2> <h3 id = "book-author"> Written by ${this.author} </h3>
             <li id = "book-pages">number of pages: ${this.pages}</li>
+            <li id = "genre"> genre: ${this.genre}</li>
         </ul>
         <button class = "delete-bttn", data-id = ${this.id} onclick ="bookService.deleteBook()"> Delete Book </button>
        
         </div>
         `
+        
     }
 
 

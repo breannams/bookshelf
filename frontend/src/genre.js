@@ -4,4 +4,8 @@ class Genre{
     }
 
     //render genre instance method
-}
+//     selectGenres(){
+//         let genreId = document.getElementById("genres-container")
+//         genreId = 
+//     }
+ }
