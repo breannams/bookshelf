@@ -1,4 +1,3 @@
-//for all of book's fetches :)
 
 class BookService{
   
@@ -7,13 +6,32 @@ class BookService{
     fetchBooks(){
         fetch(`${base_url}/books`)
         .then(resp => resp.json())
-        .then(books => {
-            for (const book of books){
-                let b = new Book(book)
-                b.renderBooks();
-            }
+        .then(bookService.renderBooks) //data set gets passed into renderBooks implicitly
+    }
+
+    renderBooks(books){
+      //  debugger
+        let booksArr = books.data
+
+        booksArr.forEach(book=>{
+            let bookDetails = book.attributes
+            let booksContainer = document.getElementById("books-container")
+            booksContainer.innerHTML +=
+            `
+            <ul>
+            <div id = specific-book>
+            <h2 id = "book-title">${bookDetails.title}</h2> <h3 id = "book-author"> Written by ${bookDetails.author} </h3>
+                <li id = "book-pages">number of pages: ${bookDetails.pages}</li>
+                <li id = "book-genre">genre: ${bookDetails.genre.name}
+            
+            </ul>
+            <button class = "delete-bttn", data-id = ${bookDetails.id} onclick ="bookService.deleteBook()"> Delete Book </button>
+        
+            </div>
+            `
         })
     }
+
     //create method
      newBookForm(){ 
         let bookForm = document.getElementById("form-container")
@@ -83,7 +101,7 @@ class BookService{
                 b.renderBooks()
                
              })
-          debugger
+         
         }
         
 
