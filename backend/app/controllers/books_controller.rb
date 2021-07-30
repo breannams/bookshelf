@@ -3,9 +3,9 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.all
-
-    render json: @books
+    books = Book.all
+   
+    render json: BookSerializer.new(books)
   end
 
   # GET /books/1
