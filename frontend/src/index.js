@@ -30,3 +30,7 @@ const addNewBookBttn = document.getElementById("add-new-book")
 const genreInput = document.getElementById("genre_id")
 addNewBookBttn.addEventListener("click", bookService.newBookForm)
 bookService.fetchBooks()
+
+
+const genreService = new GenreService
+genreService.fetchGenres()

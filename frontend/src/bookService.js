@@ -8,13 +8,15 @@ class BookService{
         .then(resp => resp.json())
         .then(bookService.renderBooks) //data set gets passed into renderBooks implicitly
     }
-
-    renderBooks(books){
-      //  debugger
-        let booksArr = books.data
-
-        booksArr.forEach(book=>{
+        renderBooks(books){
+            let booksArr = books.data
+            booksArr.forEach(book =>{
+                bookService.renderBook(book)
+            })
+        }
+    renderBook(book){
             let bookDetails = book.attributes
+         
             let booksContainer = document.getElementById("books-container")
             booksContainer.innerHTML +=
             `
@@ -29,7 +31,7 @@ class BookService{
         
             </div>
             `
-        })
+   
     }
 
     //create method
@@ -72,12 +74,7 @@ class BookService{
 
     bookFormSubmit(){
           const {title, author, pages, genre} = event.target
-            // const book = {
-            //     title: document.getElementById("title").value,
-            //     author: document.getElementById("author").value,
-            //     pages: document.getElementById("pages").value,
-            //     genre_id: document.getElementById("genre_id").value
-            // }
+           
             const book = {
                 title: title.value,
                 author: author.value,
