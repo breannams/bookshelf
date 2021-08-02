@@ -3,9 +3,24 @@ class Genre{
         this.name = name
     }
 
-    //render genre instance method
-//     selectGenres(){
-//         let genreId = document.getElementById("genres-container")
-//         genreId = 
-//     }
+    renderGenres(genres){
+        let genresArr = genres.data
+        genresArr.forEach(genre=>{
+            genreService.renderGenre(genre)
+        })
+    }
+
+    renderGenre(genre){
+       // debugger
+         let genreDetails = genre.attributes
+     
+         let genresContainer = document.getElementById("genres-container")
+         genresContainer.innerHTML += 
+       `
+       <div id = "genre-names">
+       <strong>${genreDetails.name} | </strong>
+       </div>
+       `
+
+}
  }
