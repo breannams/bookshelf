@@ -5,7 +5,7 @@ const bookService = new BookService
 const addNewBookBttn = document.getElementById("add-new-book")
 const genreInput = document.getElementById("genre_id")
 let genresContainer = document.getElementById("genres-container")
-
+let booksContainer = document.getElementById("books-container")
 
 addNewBookBttn.addEventListener("click", bookService.newBookForm)
 

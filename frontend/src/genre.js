@@ -12,18 +12,23 @@ class Genre{
             let genreDetails = genre.attributes
             genresContainer.innerHTML += 
             `
-            <div class = "genre-div"  onclick = "genreService.genreShow()">
-           <h4 data-id = ${genreDetails.id} > ${genreDetails.name} | </h4>
+            <div id = "genre-div">
+           <h4 data-id = ${genreDetails.id} class = "genre-name"> ${genreDetails.name} | </h4>
             </div>
             `
-           
-        })
-        
+
+        })    
+  
+        const genreNames = document.getElementsByClassName("genre-name")
+            
+        for (const name of genreNames){
+            name.addEventListener('click', genre.handleClick)
+        }
     }
 
-  showGenre(genre){
-      debugger
-  }
 
+    handleClick(){
+        genreService.genreShow()
+    }
 
 }

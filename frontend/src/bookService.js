@@ -17,7 +17,6 @@ class BookService{
     renderBook(book){
             let bookDetails = book.attributes
          
-            let booksContainer = document.getElementById("books-container")
             booksContainer.innerHTML +=
             `
             <ul>
@@ -105,12 +104,13 @@ class BookService{
     //delete
 
     deleteBook(){
+ 
             let bookId = parseInt(event.target.dataset.id)
             fetch(`${base_url}/books/${bookId}`,{
                 method: "DELETE"
             })
       
-       
+     
     }
 
     
