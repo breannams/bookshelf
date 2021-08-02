@@ -1,14 +1,27 @@
 class Genre{
-    constructor(name){
+    constructor(id, name){
+        this.id = id
         this.name = name
     }
-    selectGenre(){
-        genreDropdown.addEventListener("change", genreService.fetchGenre)
-    }
+  
 
+    renderGenres(genres){
+        let genresArr = genres.data
 
-    showGenre(genre){
+        let genresContainer = document.getElementById("genres-container")
+
+        genresArr.forEach(genre=>{
+            let genreDetails = genre.attributes
+            genresContainer.innerHTML += 
+            `
+            <div id = "genre-names" data-id = ${genreDetails.id}>
+            <strong>${genreDetails.name} | </strong>
+            </div>
+            `
+         
+        })
         
     }
 
- }
+
+}

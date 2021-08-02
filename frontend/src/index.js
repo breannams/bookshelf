@@ -9,5 +9,5 @@ bookService.fetchBooks()
 
 const genreService = new GenreService
 const genre = new Genre
-const genreDropdown = document.getElementById("genre-dropdown")
-genre.selectGenre()
+
+genreService.fetchGenres()

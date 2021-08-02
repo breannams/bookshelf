@@ -1,11 +1,12 @@
 class GenreService{
 
     ///read
-    fetchGenre(genre){
-        
-       return fetch(`${base_url}/genres/${genre}`)
+
+
+    fetchGenres(){
+        fetch(`${base_url}/genres`)
         .then(resp => resp.json())
-        .then(genre.showGenre) //data set gets passed into renderGenres implicitly
+        .then(genre.renderGenres) //data set gets passed into renderGenres implicitly
     }
     
 
