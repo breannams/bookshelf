@@ -109,6 +109,7 @@ class BookService{
             fetch(`${base_url}/books/${bookId}`,{
                 method: "DELETE"
             })
+      
        
     }
 
