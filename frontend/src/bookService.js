@@ -47,7 +47,7 @@ class BookService{
 
             <label>Select a Genre: </label>
             <select id = "book-genre" name = "genre">
-            <option value="1">Horror</option>
+            <option value = "1">Horror</option>
             <option value = "2">Fantasy</option>
             <option value = "3">Sci-Fi</option>
             <option value = "4">Suspense</option>
@@ -95,7 +95,7 @@ class BookService{
              .then(resp => resp.json())
              .then( book =>{
                 let b = new Book(book)
-                b.renderBooks()
+                b.renderBook()
                
              })
          
