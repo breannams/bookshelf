@@ -95,7 +95,7 @@ class BookService{
              .then(resp => resp.json())
              .then( book =>{
                 let b = new Book(book)
-                b.renderBook()
+                b.bookService.renderBook()
                
              })
          
