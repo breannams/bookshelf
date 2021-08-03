@@ -13,17 +13,7 @@ class GenresController < ApplicationController
     render json: GenreSerializer.new(genre)
   end
 
-  # POST /genres
-  def create
-    genre = Genre.new(genre_params)
-
-    if genre.save
-      render json: genre, status: :created, location: genre
-    else
-      render json: genre.errors, status: :unprocessable_entity
-    end
-  end
-
+ 
   private
  
 
