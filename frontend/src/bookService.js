@@ -36,19 +36,14 @@ class BookService{
         
              fetch(`${base_url}/books`,configObj)
              .then(resp => resp.json())
-             .then( book =>{
-              console.log(book)
-               
-             })
-         
+             .then(data =>{debugger})
         }
         
 
     //delete
 
     deleteBook(){
-       // event.target.parentElement.remove()
-
+        event.target.parentElement.remove()
         let bookId = parseInt(event.target.dataset.id)
          
         fetch(`${base_url}/books/${bookId}`,{

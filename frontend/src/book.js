@@ -6,11 +6,10 @@ class Book{
         this.author = author
         this.pages = pages
         this.genre = genre_id
-        
     }
 
-   static newBookForm(){ 
-       let bookForm = document.getElementById("form-container")
+    static newBookForm(){ 
+    let bookForm = document.getElementById("form-container")
 
        bookForm.innerHTML +=
         `
@@ -44,12 +43,12 @@ class Book{
     }
 
     static handleSubmit(event){
-       
         event.preventDefault()
-       bookService.createBook()
+        bookService.createBook()
+     //  event.target.reset()
     }
 
-  static  renderBooks(books){
+    static renderBooks(books){
         let booksArr = books.data
         booksArr.forEach(book =>{
             Book.renderBook(book)
