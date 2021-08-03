@@ -76,4 +76,9 @@ class Book{
             bttn.addEventListener('click', bookService.deleteBook)}
     }
 
+    static toggleFormOn(){
+        const addNewBookBttn = document.getElementById("add-new-book")
+        addNewBookBttn.addEventListener('click', Book.newBookForm)
+    }
+
  }
