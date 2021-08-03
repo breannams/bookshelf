@@ -24,7 +24,7 @@ class BookService{
                 pages: pages.value,
                 genre_id: genre.value
             }
-           
+    
             const configObj ={
                 method: "POST",
                 headers: {
@@ -36,7 +36,9 @@ class BookService{
         
              fetch(`${base_url}/books`,configObj)
              .then(resp => resp.json())
-             .then(data =>{debugger})
+             .then( book =>{
+                Book.renderBook(book.data)
+             })
         }
         
 

@@ -56,6 +56,7 @@ class Book{
     }
 
     static renderBook(book){
+     
         let bookDetails = book.attributes
      
         booksContainer.innerHTML +=
@@ -63,8 +64,8 @@ class Book{
         <div data-id = ${bookDetails.id}>
         <ul>
         <h2 id = "book-title">${bookDetails.title}</h2> <h3> Written by ${bookDetails.author} </h3>
-            <li id = "book-pages">number of pages: ${bookDetails.pages}</li>
-            <li id = "book-genre">genre: ${bookDetails.genre.name}
+            <li>number of pages: ${bookDetails.pages}</li>
+            <li>genre: ${bookDetails.genre.name}
          
         </ul>
         <button class = "delete-bttn", data-id = ${bookDetails.id}> Delete Book </button>
