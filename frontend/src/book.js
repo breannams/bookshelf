@@ -45,7 +45,7 @@ class Book{
     static handleSubmit(event){
         event.preventDefault()
         bookService.createBook()
-     //  event.target.reset()
+        event.target.parentElement.reset()
     }
 
     static renderBooks(books){
