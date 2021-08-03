@@ -1,0 +1,23 @@
+body {
+    background-color: bisque;
+  }
+  .header{
+      color:darkcyan;
+  }
+  h1 {
+    color: blue;
+  }
+
+ 
+  .genre-name{
+      color: blue;
+      text-decoration: underline;
+  }
+  .create-bttn{
+      background-color:darkgreen;
+      color:lawngreen;
+  }
+  .delete-bttn{
+      background-color:red;
+      color:cornsilk
+  }

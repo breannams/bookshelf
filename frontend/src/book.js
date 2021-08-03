@@ -34,7 +34,7 @@ class Book{
             <br>
 
 
-        <input id = "submit-bttn" type = "submit" value = "Create!">
+        <input class = "create-bttn" id = "submit-bttn" type = "submit" value = "Create!">
         </form>
         `
        let submitBttn = document.getElementById("submit-bttn")
