@@ -22,5 +22,26 @@ Book.create([
 ])
 
 Book.create([
-    {title: 'A Wizard of Earthsea', author: 'Ursula K. Le Guin', pages: 205, genre_id: 3}
+    {title: 'A Wizard of Earthsea', author: 'Ursula K. Le Guin', pages: 205, genre_id: 2}
+])
+
+Book.create([
+    {title: 'First Strike', author: 'Eric Nylund', pages: 340, genre_id: 3}
+])
+
+Book.create([
+    {title:'Gone Girl', author: 'Gillian Flynn', pages: 432, genre_id: 4}
+])
+
+Book.create([
+    {title:'The Art of Ritual', author: 'Rachel Patterson', pages: 232, genre_id: 5}
+])
+Book.create([
+    {title:'The Bourne Identity', author: 'Robert Ludlum', pages: 523, genre_id: 6}
+])
+Book.create([
+    {title:'The Count of Monte-Cristo', author: 'Alexandre Dumas', pages: 1276, genre_id: 7}
+])
+Book.create([
+    {title:'Green Lantern, Vol. 1: Sinestro (The New 52)', author: 'Geoff Johns / Doug Mahnke', pages: 160, genre_id: 8}
 ])
