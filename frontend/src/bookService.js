@@ -14,8 +14,10 @@ class BookService{
 
 
     createBook(){
-          const {title, author, pages, genre} = event.target
-           
+        event.preventDefault()
+      
+          const {title, author, pages, genre} = event.target.parentElement
+
             const book = {
                 title: title.value,
                 author: author.value,

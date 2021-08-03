@@ -1,5 +1,4 @@
 class Book{
-   static bookForm = document.getElementById("form-container")
 
     constructor({id, title, author, pages, genre_id}){
         this.id = id
@@ -11,8 +10,9 @@ class Book{
     }
 
    static newBookForm(){ 
-       
-       Book.bookForm.innerHTML +=
+       let bookForm = document.getElementById("form-container")
+
+       bookForm.innerHTML +=
         `
         <form>
         <h3>Enter In a New Book!</h3>
@@ -35,14 +35,16 @@ class Book{
             <br>
 
 
-        <input type = "submit" value = "Create!">
+        <input id = "submit-bttn" type = "submit" value = "Create!">
         </form>
         `
-        Book.bookForm.addEventListener('submit', Book.handleSubmit)
+       let submitBttn = document.getElementById("submit-bttn")
+       submitBttn.addEventListener('click', Book.handleSubmit)
 
     }
 
     static handleSubmit(event){
+       
         event.preventDefault()
        bookService.createBook()
     }
@@ -66,11 +68,13 @@ class Book{
             <li id = "book-genre">genre: ${bookDetails.genre.name}
         
         </ul>
-        <button class = "delete-bttn", data-id = ${bookDetails.id} onclick ="bookService.deleteBook()"> Delete Book </button>
+        <button class = "delete-bttn", data-id = ${bookDetails.id}> Delete Book </button>
     
         </div>
         `
-
+        let deleteBttn = document.getElementsByClassName('delete-bttn')
+        for (const bttn of deleteBttn) {
+            bttn.addEventListener('click', bookService.deleteBook)}
     }
 
  }
