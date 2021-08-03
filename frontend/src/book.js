@@ -61,16 +61,16 @@ class Book{
      
         booksContainer.innerHTML +=
         `
+        <div data-id = ${bookDetails.id}>
         <ul>
-        <div id = specific-book>
-        <h2 id = "book-title">${bookDetails.title}</h2> <h3 id = "book-author"> Written by ${bookDetails.author} </h3>
+        <h2 id = "book-title">${bookDetails.title}</h2> <h3> Written by ${bookDetails.author} </h3>
             <li id = "book-pages">number of pages: ${bookDetails.pages}</li>
             <li id = "book-genre">genre: ${bookDetails.genre.name}
-        
+         
         </ul>
         <button class = "delete-bttn", data-id = ${bookDetails.id}> Delete Book </button>
-    
         </div>
+       
         `
         let deleteBttn = document.getElementsByClassName('delete-bttn')
         for (const bttn of deleteBttn) {
