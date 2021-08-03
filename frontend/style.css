@@ -1,14 +1,14 @@
 body {
     background-color: bisque;
   }
+  .project-title{
+    color:darkcyan;
+    text-align: center
+}
   .header{
       color:darkcyan;
   }
-  h1 {
-    color: blue;
-  }
 
- 
   .genre-name{
       color: blue;
       text-decoration: underline;
@@ -20,4 +20,9 @@ body {
   .delete-bttn{
       background-color:red;
       color:cornsilk
+  }
+
+
+  h1 {
+    color: blue;
   }
