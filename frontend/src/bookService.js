@@ -37,8 +37,18 @@ class BookService{
              fetch(`${base_url}/books`,configObj)
              .then(resp => resp.json())
              .then( book =>{
-                Book.renderBook(book.data)
+               
+                if(book.error){
+                 
+                    alert(book.error)
+                }
+                else  {
+                    Book.renderBook(book.data)
+                }
              })
+            
+             
+            
         }
         
 

@@ -22,7 +22,7 @@ class BooksController < ApplicationController
     if book.save
       render json: BookSerializer.new(book), status: :created, location: book
     else
-      render json: book.errors, status: :unprocessable_entity
+      render json: {error: "Book not successfully saved. Please ensure you fill out all of the form."}
     end
   end
 
