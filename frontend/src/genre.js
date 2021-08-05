@@ -1,5 +1,5 @@
 class Genre{
-    static genreContainer = document.getElementById("genres-container")
+  
     constructor({id, name}){
         this.id = id
         this.name = name
