@@ -5,7 +5,6 @@ class Genre{
         this.name = name
 
         this.element = document.createElement('h4')
-
         
     }
   
@@ -33,13 +32,36 @@ class Genre{
     }
 
 
-    renderShowPage(){
+    renderShowPage(attributes){
+        genresContainer.innerHTML = ''
         booksContainer.innerHTML = ''
         booksContainer.innerHTML +=
         `
             <h1 id = "specific-genre-name"><u>${this.name}</u></h1>
             <a id = "back-bttn"href ="#">See all Books</a>
         `
+        let genreBooksArr = attributes.books
+
+        genreBooksArr.forEach(book=>{
+        booksContainer.innerHTML +=
+        `
+            <ul>
+            <li><h2>Title: ${book.title}</h2></li>
+            <h3>Written by: ${book.author}</h3>
+            <h4>number of pages: ${book.pages}</h4> 
+            </ul>
+        `
+
+      
+        const backBttn = document.getElementById('back-bttn')
+        backBttn.addEventListener('click', Genre.goback)
+    })
+    }
+
+    static goback(){
+        booksContainer.innerHTML = ''
+        bookService.fetchBooks()
+        genreService.fetchGenres()
     }
 
 }

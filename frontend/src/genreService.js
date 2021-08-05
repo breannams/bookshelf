@@ -27,31 +27,11 @@ class GenreService{
         .then(genre => {
             let attributes = genre.data.attributes
             const g = new Genre(attributes)
-            g.renderShowPage()
-
-           let genreBooksArr = attributes.books
-
-            genreBooksArr.forEach(book=>{
-            booksContainer.innerHTML +=
-            `
-                <ul>
-                <li><h2>Title: ${book.title}</h2></li>
-                <h3>Written by: ${book.author}</h3>
-                <h4>number of pages: ${book.pages}</h4> 
-                </ul>
-            `
-      })
-
-      genresContainer.innerHTML = ''
-      const backBttn = document.getElementById('back-bttn')
-      backBttn.addEventListener('click', genreService.goback)
+            g.renderShowPage(attributes)
     })
 
+
     }
-    goback(){
-        booksContainer.innerHTML = ''
-        bookService.fetchBooks()
-        genreService.fetchGenres()
-    }
+ 
 }
 

@@ -2,16 +2,19 @@
 class BookService{
   
     //read method
-
     fetchBooks(){
         fetch(`${base_url}/books`)
         .then(resp => resp.json())
         .then(book =>{
+         
             let bookArr = book.data
             for (const book of bookArr){
                 let attributes = book.attributes
+     
                 const b = new Book(attributes)
-                b.renderBook()
+                b.renderBook(attributes) 
+               
+      
             }
         })
     }
@@ -48,10 +51,12 @@ class BookService{
                     alert(book.error)
                     }
                     else  {
-                       // debugger
+                  
                             let attributes = book.data.attributes
                             const b = new Book(attributes)
-                            b.renderBook()
+                            b.renderBook(attributes)
+                           
+                            
                     }
              })
             
@@ -76,6 +81,4 @@ class BookService{
       
        
     }
-
-    
 }

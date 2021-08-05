@@ -48,25 +48,30 @@ class Book{
         event.target.parentElement.reset()
     }
 
-     renderBook(){
-     
+     renderBook(attributes){
+
         booksContainer.innerHTML +=
         `
-        <div data-id = ${this.id}>
+        <div data-id = ${this.id} class = "genre-goes-here-plz">
         <ul>
-        <h2 id = "book-title">${this.title}</h2> <h3> Written by ${this.author} </h3>
-            <li>number of pages: ${this.pages}</li>
-            <li>genre: ${this.genre.name}
-         
+        <li><h2 id = "book-title">${this.title}</h2> </li>
+        <h3> Written by ${this.author} </h3>
+        <h3>number of pages: ${this.pages}</h>
+        <h3>genre: ${attributes.genre.name}
         </ul>
         <button class = "delete-bttn", data-id = ${this.id}> Delete Book </button>
         </div>
        
         `
+        Book.handleDelete()
+    }
+
+   static handleDelete(){
         let deleteBttn = document.getElementsByClassName('delete-bttn')
         for (const bttn of deleteBttn) {
+         
             bttn.addEventListener('click', bookService.deleteBook)}
-    }
+        }
 
     static toggleFormOn(){
         const addNewBookBttn = document.getElementById("add-new-book")
