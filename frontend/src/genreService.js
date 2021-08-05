@@ -25,31 +25,23 @@ class GenreService{
         fetch(`${base_url}/genres/${genreId}`)
         .then(resp => resp.json())
         .then(genre => {
-         
-            let genreDetails = genre.data.attributes
-            let genreBooksArr = genreDetails.books
+            let attributes = genre.data.attributes
+            const g = new Genre(attributes)
+            g.renderShowPage()
 
-            booksContainer.innerHTML = ''
-            booksContainer.innerHTML +=
-            `
-                <h1 id = "specific-genre-name"><u>${genreDetails.name}</u></h1>
-                <a id = "back-bttn"href ="#">See all Books</a>
-            `
+           let genreBooksArr = attributes.books
 
             genreBooksArr.forEach(book=>{
             booksContainer.innerHTML +=
             `
                 <ul>
-                <li><h3>Title: ${book.title}</h3></li>
-                <h4>Written by: ${book.author}</h3>
-                <h5>number of pages: ${book.pages}</h5> 
+                <li><h2>Title: ${book.title}</h3></li>
+                <h3>Written by: ${book.author}</h3>
+                <h4>number of pages: ${book.pages}</h5> 
                 </ul>
             `
       })
 
-      genresContainer.innerHTML = ''
-      const backBttn = document.getElementById('back-bttn')
-      backBttn.addEventListener('click', genreService.goback)
     })
 
     }

@@ -32,4 +32,20 @@ class Genre{
         }
     }
 
+
+    renderShowPage(){
+
+        booksContainer.innerHTML = ''
+        booksContainer.innerHTML +=
+        `
+            <h1 id = "specific-genre-name"><u>${this.name}</u></h1>
+            <a id = "back-bttn"href ="#">See all Books</a>
+        `
+
+        genresContainer.innerHTML = ''
+        const backBttn = document.getElementById('back-bttn')
+        backBttn.addEventListener('click', genreService.goback)
+
+    }
+
 }
