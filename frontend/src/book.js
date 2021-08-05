@@ -1,4 +1,8 @@
 class Book{
+    static  addNewBookBttn = document.getElementById("add-new-book")
+    static formContainer = document.getElementById("form-container")
+    static formHidden = true
+
 
     constructor({id, title, author, pages, genre_id}){
         this.id = id
@@ -9,9 +13,8 @@ class Book{
     }
 
     static newBookForm(){ 
-    let bookForm = document.getElementById("form-container")
-
-       bookForm.innerHTML +=
+      
+       Book.formContainer.innerHTML +=
         `
         <form>
         <h3>Enter In a New Book!</h3>
@@ -73,9 +76,21 @@ class Book{
             bttn.addEventListener('click', bookService.deleteBook)}
         }
 
-    static toggleFormOn(){
-        const addNewBookBttn = document.getElementById("add-new-book")
-        addNewBookBttn.addEventListener('click', Book.newBookForm)
+    static handleForm(){
+        Book.addNewBookBttn.addEventListener('click', Book.toggleForm)
+    }
+
+    static toggleForm(){
+        if (Book.formHidden === true){
+            Book.newBookForm()
+            Book.addNewBookBttn.innerText = "Hide Form"
+            Book.formHidden = false
+        }
+        else{
+            Book.formContainer.innerHTML = ''
+            Book.addNewBookBttn.innerText = "Add a New Book!"
+            Book.formHidden = true
+        }
     }
 
  }

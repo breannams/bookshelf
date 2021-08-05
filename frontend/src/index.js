@@ -5,6 +5,7 @@ const genreService = new GenreService
 let booksContainer = document.getElementById("books-container")
 let genresContainer = document.getElementById("genres-container")
 
+
 genreService.fetchGenres()
 bookService.fetchBooks()
-Book.toggleFormOn()
+Book.handleForm()
