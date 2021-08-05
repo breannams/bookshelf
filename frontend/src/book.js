@@ -48,27 +48,18 @@ class Book{
         event.target.parentElement.reset()
     }
 
-    static renderBooks(books){
-        let booksArr = books.data
-        booksArr.forEach(book =>{
-            Book.renderBook(book)
-        })
-    }
-
-    static renderBook(book){
-     
-        let bookDetails = book.attributes
+     renderBook(){
      
         booksContainer.innerHTML +=
         `
-        <div data-id = ${bookDetails.id}>
+        <div data-id = ${this.id}>
         <ul>
-        <h2 id = "book-title">${bookDetails.title}</h2> <h3> Written by ${bookDetails.author} </h3>
-            <li>number of pages: ${bookDetails.pages}</li>
-            <li>genre: ${bookDetails.genre.name}
+        <h2 id = "book-title">${this.title}</h2> <h3> Written by ${this.author} </h3>
+            <li>number of pages: ${this.pages}</li>
+            <li>genre: ${this.genre.name}
          
         </ul>
-        <button class = "delete-bttn", data-id = ${bookDetails.id}> Delete Book </button>
+        <button class = "delete-bttn", data-id = ${this.id}> Delete Book </button>
         </div>
        
         `

@@ -9,8 +9,9 @@ class BookService{
         .then(book =>{
             let bookArr = book.data
             for (const book of bookArr){
-                const b = new Book(book)
-            //    b.renderBook(book.attributes)
+                let attributes = book.attributes
+                const b = new Book(attributes)
+                b.renderBook()
             }
         })
     }
@@ -47,7 +48,10 @@ class BookService{
                     alert(book.error)
                     }
                     else  {
-                        Book.renderBook(book.data)
+                       // debugger
+                            let attributes = book.data.attributes
+                            const b = new Book(attributes)
+                            b.renderBook()
                     }
              })
             

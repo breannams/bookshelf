@@ -13,8 +13,7 @@ class GenreService{
                 for (const genre of genreArr){
                     let attributes = genre.attributes
                     const g = new Genre(attributes)
-                    g.renderGenre(genre.attributes)
-                    
+                    g.renderGenre()
                 }
             })
     }
