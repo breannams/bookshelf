@@ -35,13 +35,16 @@ class GenreService{
             booksContainer.innerHTML +=
             `
                 <ul>
-                <li><h2>Title: ${book.title}</h3></li>
+                <li><h2>Title: ${book.title}</h2></li>
                 <h3>Written by: ${book.author}</h3>
-                <h4>number of pages: ${book.pages}</h5> 
+                <h4>number of pages: ${book.pages}</h4> 
                 </ul>
             `
       })
 
+      genresContainer.innerHTML = ''
+      const backBttn = document.getElementById('back-bttn')
+      backBttn.addEventListener('click', genreService.goback)
     })
 
     }
