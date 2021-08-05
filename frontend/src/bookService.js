@@ -6,7 +6,13 @@ class BookService{
     fetchBooks(){
         fetch(`${base_url}/books`)
         .then(resp => resp.json())
-        .then(Book.renderBooks)
+        .then(book =>{
+            let bookArr = book.data
+            for (const book of bookArr){
+                const b = new Book(book)
+            //    b.renderBook(book.attributes)
+            }
+        })
     }
       
 

@@ -1,21 +1,30 @@
 class Genre{
+    static genreContainer = document.getElementById("genres-container")
     constructor({id, name}){
         this.id = id
         this.name = name
+
+        this.element = document.createElement('h4')
+
+        
     }
   
+    genreHTML(){
+       
+        this.element.innerHTML +=
+        `
+        <div id = "genre-div" data-id = ${this.id} class = "genre-name">
+            ${this.name} 
+       </div>
+        `
+        return this.element
+    }
     
-    renderGenres(genres){
-        genresContainer.innerHTML += 
-            `
-           
-           <div id = "genre-div">
-            <ul>
-                <h4 data-id = ${this.id} class = "genre-name"> ${genres.name} </h4>
-            </ul> 
-           </div>
+ 
+    renderGenre(){
+   
+     genresContainer.append(this.genreHTML()) 
 
-            `
         const genreNames = document.getElementsByClassName("genre-name")
             
         for (const name of genreNames){

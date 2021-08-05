@@ -11,9 +11,10 @@ class GenreService{
                 let genreArr = genre.data
                 genresContainer.innerHTML += `<h1 class = 'header'>All Genres: </h1>`
                 for (const genre of genreArr){
-                    const g = new Genre(genre)
+                    let attributes = genre.attributes
+                    const g = new Genre(attributes)
+                    g.renderGenre(genre.attributes)
                     
-                    g.renderGenres(genre.attributes)
                 }
             })
     }
@@ -22,11 +23,10 @@ class GenreService{
     genreShow(){
       
         let genreId = parseInt(event.target.dataset.id)
-     
         fetch(`${base_url}/genres/${genreId}`)
         .then(resp => resp.json())
         .then(genre => {
-
+         
             let genreDetails = genre.data.attributes
             let genreBooksArr = genreDetails.books
 
