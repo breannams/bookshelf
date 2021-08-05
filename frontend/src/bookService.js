@@ -38,7 +38,7 @@ class BookService{
                 .then(resp => resp.json())
                 .then( book =>{
                     if(book.error){
-                        alert(book.error)
+                    alert(book.error)
                     }
                     else  {
                         Book.renderBook(book.data)
@@ -58,7 +58,7 @@ class BookService{
          
         fetch(`${base_url}/books/${bookId}`,{
                 method: "DELETE"
-                })
+        })
         .then(resp => resp.json())
         .then(msg => {
             alert(msg.message)

@@ -6,7 +6,16 @@ class GenreService{
     fetchGenres(){
          fetch(`${base_url}/genres`)
         .then(resp => resp.json())
-        .then(Genre.renderGenres) //data set gets passed into renderGenres implicitly
+        .then(genre =>
+            {
+                let genreArr = genre.data
+                genresContainer.innerHTML += `<h1 class = 'header'>All Genres: </h1>`
+                for (const genre of genreArr){
+                    const g = new Genre(genre)
+                    
+                    g.renderGenres(genre.attributes)
+                }
+            })
     }
     
   
@@ -32,7 +41,7 @@ class GenreService{
             booksContainer.innerHTML +=
             `
                 <ul>
-                <li><h3>Title:${book.title}</h3></li>
+                <li><h3>Title: ${book.title}</h3></li>
                 <h4>Written by: ${book.author}</h3>
                 <h5>number of pages: ${book.pages}</h5> 
                 </ul>
