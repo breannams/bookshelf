@@ -6,7 +6,7 @@ class BookService{
     fetchBooks(){
         fetch(`${base_url}/books`)
         .then(resp => resp.json())
-        .then(Book.renderBooks) //data set gets passed into renderBooks implicitly
+        .then(Book.renderBooks)
     }
       
 
@@ -16,7 +16,7 @@ class BookService{
     createBook(){
         event.preventDefault()
       
-          const {title, author, pages, genre} = event.target.parentElement
+        const {title, author, pages, genre} = event.target.parentElement
 
             const book = {
                 title: title.value,
@@ -35,16 +35,14 @@ class BookService{
             }
         
              fetch(`${base_url}/books`,configObj)
-             .then(resp => resp.json())
-             .then( book =>{
-               
-                if(book.error){
-                 
-                    alert(book.error)
-                }
-                else  {
-                    Book.renderBook(book.data)
-                }
+                .then(resp => resp.json())
+                .then( book =>{
+                    if(book.error){
+                        alert(book.error)
+                    }
+                    else  {
+                        Book.renderBook(book.data)
+                    }
              })
             
              
@@ -60,7 +58,7 @@ class BookService{
          
         fetch(`${base_url}/books/${bookId}`,{
                 method: "DELETE"
-        })
+                })
         .then(resp => resp.json())
         .then(msg => {
             alert(msg.message)
